@@ -1,10 +1,10 @@
 export const configurazione = {
-  testo: "G",
+  testo: "D",
 
   dimensione: 0.8,
   interlinea: 0.7,
   allineamento: "centro",
-  percorsoFont: "./assets/InputMonoCondensed-BoldItalic.ttf",
+  percorsoFont: "./Angel wish.otf",
 
   sensibilitàMicrofonoBase: 1,
   densitàPuntiBase: 1,
@@ -42,18 +42,12 @@ export function disegnaPunto({
   beta = 0,
   gamma = 0,
 }) {
-  const size = sin((frameCount + indice) * 6) * ((volume * unita) / 2) * unita;
+  fill("black");
+  square(x, y, 10);
 
-  if (indice % 2 == 0) {
-    fill("black");
-  } else {
-    fill("white");
-  }
-  noStroke();
+  fill("white");
+  square(x + 10, y + 10, 20);
 
-  push();
-  translate(x, y);
-  ellipse(0, 0, size);
   pop();
 }
 
@@ -70,6 +64,7 @@ export function caricamentoRisorse() {}
 export function impostazioni() {
   frameRate(30);
   angleMode(DEGREES);
+  rectMode("center");
 }
 
 /**
@@ -77,10 +72,10 @@ export function impostazioni() {
  * @param {function} disegnaTesto - La funzione che disegna il testo
  */
 export function sotto(disegnaTesto) {
-  background("deeppink");
+  background("black");
 
   // [INFO] Rimuovi il commento per disegnare il testo
-  fill("white");
+  fill("black");
   disegnaTesto();
 }
 
