@@ -42,13 +42,16 @@ export function disegnaPunto({
   beta = 0,
   gamma = 0,
 }) {
+  push();
+  translate(x, y);
   fill("black");
   square(x, y, 10);
-
-  fill("white");
-  square(x + 10, y + 10, 20);
-
+  rotate(frameCount);
   pop();
+
+  strokeWeight(4);
+  fill("white");
+  square(x + 10, y, 10);
 }
 
 /**
